@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-end
+  labels:
+    app: front-end
+  namespace: dev
+spec:
+  template:
+    metadata:
+      name:
+      labels:
+        app: front-end
+    spec:
+      containers:
+      - name: centos-image
+        image: centos
+        args:
+        - sleep
+        - 10000
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-end
